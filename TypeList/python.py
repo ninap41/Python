@@ -9,19 +9,19 @@ count_str = 0
 makestring = "String:"
 sum =0
 
-y = ['magical','unicorns']
-for y in x:
+y =['magical','unicorns']
+for x in y:
     if (type(x) == int):
-        Countin +=1
+        count_int +=1
         sum = sum + x
     if(type(x) == str):
-        Countstr +=1
-        makestring = x + '' + makestring  
+        count_str +=1
+        makestring = "made string:" + y[0] + ''  
 
 if (count_int == 0):
-    print "The list you entered is of mixed type"
+    print "The list you entered was a string"
 elif (count_str == 0):
-    print "that was a integer list"
+    print "The list you entered was a integer"
 else:
     print "that was a mixed list"
 
