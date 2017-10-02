@@ -1,9 +1,8 @@
-list_3 = ['magical unicorns',19,'hello',98.98,'world']
-list_2= [2,3,1,7,4,12]
-list_1= ['magical','unicorns']
 
-
-x = ['magical','unicorns']
+#tests
+c = ['magical unicorns',19,'hello',98.98,'world']
+g= [2,3,1,7,4,12]
+y= ['magical','unicorns']
 
 count_int = 0
 count_str = 0
