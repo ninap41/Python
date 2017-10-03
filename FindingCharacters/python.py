@@ -1,11 +1,9 @@
-def find_character(word_list, char):
-    new_list = []
-    for i in range(0, len(word_list)):
 
-        if word_list[i].find(char) != -1:
-            new_list.append(word_list[i])
-
-    print new_list
-
-test_list = ['hello','world','my','name','is','Anna']
-find_character(test_list, 'o')
+char = 'n'
+new_list = []
+list = ['hello', 'world', 'my', 'name', 'is', 'Anna', 'lol']
+for x in list:
+    for letter in x:
+        if (letter == char):
+                new_list.append(x)
+print new_list
