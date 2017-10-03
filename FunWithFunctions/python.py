@@ -31,6 +31,25 @@ for x in arr:
         val_arr.append(1)
     new_array.append(val_arr)
     print new_array
+# new_array = []
+# def layered_multiple(arr):
+#     for x in arr:
+#         val_arr = []
+#     for i in range(0,x):
+#         val_arr.append(1)
+#             new_array.append(val_arr)
+#         return new_array
+
+
+#testing function guidline from lecture!
+# def read_from_list(list):
+#     for thing in list:
+#         print thing
+
+# test_list = [1,2,3]
+# read_from_list(test_list)
+
+
 
 
 

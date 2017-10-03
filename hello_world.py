@@ -67,14 +67,46 @@
 #     break
 #   print val
 
-def multiply(arr,num):
-    print arr, num # output should be [2,4,10,16] 5
-    for x in arr:
-        print x
-        x *= num
-        print x
-    return arr
-a = [2,4,10,16]
-b = multiply(a,5)
-print b
+# def multiply(arr,num):
+#     print arr, num # output should be [2,4,10,16] 5
+#     for x in arr:
+#         print x
+#         x *= num
+#         print x
+#     return arr
+# a = [2,4,10,16]
+# b = multiply(a,5)
+# print b
+
+# TUPLE INTRO
+# my_tuple = (5,6,7)
+# print my_tuple
+# for num in my_tuple:
+#         print num
+
+# my_tuple[0] = 99  #immutable this would be invalid.  !!!!DIFFERENCE BETWEEN TUPLE AND LIST!!!!
+
+# UNPACKING TUPLES
+# second_tuple =("user","password")  # unpacking tuples
+# user_var,password_var=second_tuple
+# print user_var
+# print password_var
+
+
+#USING DICTIONARY
+# user_dictionary = {
+#     "user_var" : "user",
+#     "password_var" : "password"
+# }
+# user_dictionary["user_var"] = "malicious user!!"
+# print user_dictionary
+
+#functions
+def read_from_list(list):
+    for thing in list:
+        print thing
+
+test_list = [1,2,3]             #when defining function go back and unindent after the function has been defined
+read_from_list(test_list)
+
 
