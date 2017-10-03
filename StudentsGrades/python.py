@@ -1,7 +1,7 @@
 
 
 scores = [50,40,20,100,99,20,]
-def students_grades(scores):
+def students_grades(sores):
     print "Students Grades!"
     for i in scores:
         if (i > 90 and i <= 100):
