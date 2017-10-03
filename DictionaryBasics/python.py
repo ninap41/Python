@@ -7,6 +7,8 @@ Nina["favorite_language"] = "My favorite language is Javascript&JQuery"
 def dictionary_basics():
     for data in Nina:
         print  Nina[data]
-dictionary_basics()
+dictionary_basics() 
+
+
 
     
