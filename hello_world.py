@@ -87,10 +87,10 @@
 # my_tuple[0] = 99  #immutable this would be invalid.  !!!!DIFFERENCE BETWEEN TUPLE AND LIST!!!!
 
 # UNPACKING TUPLES
-# second_tuple =("user","password")  # unpacking tuples
-# user_var,password_var=second_tuple
-# print user_var
-# print password_var
+second_tuple =("user","password")  # unpacking tuples
+user_var,password_var=second_tuple
+print user_var
+print password_var
 
 
 #USING DICTIONARY
