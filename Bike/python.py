@@ -29,6 +29,7 @@ class Bike(object):
         if self.miles < 0:
             self.miles = 0 # resets miles rode!
         
+        
 bike_1 = Bike(99.99, 12, 0)        #### attributes of instance inside instance
 bike_2 = Bike(125.80, 10, 0)
 
@@ -43,6 +44,7 @@ bike_1.ride()
 bike_1.reverseMiles()
 print 'here are our stats after the bike ride.. notice how the object changed. Yay I dont suck today'
 print bike_1.displayInfo()
+
 
 
 
