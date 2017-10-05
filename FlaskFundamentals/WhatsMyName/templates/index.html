@@ -1,20 +1,18 @@
 <html>
-
-
-    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='process.css') }}">
     <head>
-        
        <title>Form Test Index</title>
     </head>
     <body>
-            <h1>Index Page</h1>
-            <h3>Create a User</h3>
+            <h1>What's Your Dang Name</h1>
+            <h3>Type it NOW</h3>
  
       <!-- read on to learn about form actions, we'll talk about the method in a later section -->
       <form action='/users' method='post'>
           Name: <input type='text' name='name'>
-          Email: <input type='text' name='email'>
-          <input type='submit' value='create user'>
+         
+          <input type='submit' value='SUBMIT'>
+
       </form>
     </body>
 </html>
