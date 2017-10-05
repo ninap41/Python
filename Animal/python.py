@@ -8,6 +8,7 @@ class Animal(object):
         self.health = self.health - 5
         return self
     def run_run(self):
+        #for i in range(1,4)    instead of walk walk walk walk just loopppp it dingus
         self.health = self.health - 10
         return self
     def displayHealth(self):
@@ -19,7 +20,7 @@ animal_1.walk_walk().walk_walk().walk_walk().run_run().run_run().displayHealth()
 
 class Dog(Animal):
     def __init__(self,name):
-        super(Dog, self).__init__(name)
+        super(Dog, self).__init__(name) #instead of of super just declare the instant variables
         self.health = 150
     
     def pet_mine(self):

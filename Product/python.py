@@ -32,7 +32,7 @@ class Product(object):
         print 'Brand:' , str(self.brand)
         print 'Status:' , str(self.status)
     
-thing_1 = Product(12,"'Tis A Shirt?'", -1,"The Closet Existentialist")
+thing_1 = Product(12,"'Tis A Shirt?", -1,"The Closet Existentialist")
 thing_2=Product(10,"'What a Pointless Shirt'", -3,"The Closet Nihilist")
 thing_3=Product(15,"'Burn All Shirts!'", -2,"The Closet Nihilist")
 
