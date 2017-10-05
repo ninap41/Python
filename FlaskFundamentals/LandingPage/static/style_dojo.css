@@ -1,0 +1,20 @@
+body {
+    background-color: white;
+   font-family: Arial, Helvetica, sans-serif
+}
+
+* {
+    margin: 0px auto;
+    padding: 0px auto;
+}
+form { 
+   
+    background-size: 400px;
+    padding-left: 300px;
+    padding-top: 200px;
+
+}
+
+.Move {
+    background-color: red;
+}
