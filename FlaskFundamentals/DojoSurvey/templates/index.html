@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Dojo Survey</legend>
+        <form action="/results" method="post">
+        Name: <input type="text" name ="name"><br>
+        Dojo Location:
+        <select name="location"> 
+            <option value="Chicago">Chicago</option>
+            <option value="Dallas">Dallas</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Mars">Mars</option>   
+        </select> 
+        Favorite Language:
+        <select name ="language">
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Html/CSS">Html/Css</option>
+            <option value=Java"">Java</option>
+        </select>
+        Comment (optional)
+        <input type="text" name="comment"><br>
+        <input type='submit' value='submit'>
+        </form>
+    </fieldset>
+
+    
+</body>
+</html>
