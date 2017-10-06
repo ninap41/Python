@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninjas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/groupninja.css') }}">
+    <link rel="stylesheet" href="../static/stylesheets/groupninja.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#tmnt').hide().fadeIn(3000);
+        $('button').click(function(){
+            var color = $('input:text').val()
+            if(color == 'blue'){
+                $('body').css('background-color', 'white')
+                $('img').slideUp(1000)
+                $('#blue').fadeIn(3000)
+                $('button').css('background-color', 'blue')
+                $('button').css('color', 'white')
+                $('h1').css('color', 'blue')
+            } else if (color == 'red'){
+                $('body').css('background-color', 'white')
+                $('img').slideUp()
+                $('#red').fadeIn(3000)
+                $('button').css('background-color', 'red')
+                $('button').css('color', 'white')
+                $('h1').css('color', 'red')
+            } else if (color == 'purple'){
+                $('body').css('background-color', 'white')
+                $('img').slideUp()
+                $('#purple').fadeIn(3000)
+                $('button').css('background-color', 'purple')
+                $('button').css('color', 'white')
+                $('h1').css('color', 'purple')
+            } else if (color == 'orange'){
+                $('body').css('background-color', 'white')
+                $('img').slideUp()
+                $('#orange').fadeIn(3000)
+                $('button').css('background-color', 'orange')
+                $('button').css('color', 'white')
+                $('h1').css('color', 'orange')
+            } else {
+                $('img').slideUp()
+                $('#april').fadeIn(3000)
+                $('button').css('background-color', 'yellow')
+                $('button').css('color', 'black')
+                $('h1').css('color', 'yellow')
+                $('body').css('background-color', 'black')
+            } 
+        });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <h1>Which Color Should We Find?</h1>
+        <input class="text" type="text" name="color"> <br />
+    </form>
+        <button>Find Him!</button>
+    <img src="../static/img/tmnt.png" alt="TMNT" id="tmnt">
+    <img src="../static/img/raphael.jpg" alt="Raphael" id="red" hidden>
+    <img src="../static/img/michelangelo.jpg" alt="Michelangelo" id="orange" hidden>
+    <img src="../static/img/leonardo.jpg" alt="Leonardo" id="blue" hidden>
+    <img src="../static/img/donatello.jpg" alt="Donatello" id="purple" hidden>
+    <img src="../static/img/notapril.jpg" alt="April O'Neil" id="april" hidden>
+</body>
+</html>

@@ -1,0 +1,27 @@
+form {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+}
+
+button {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+
+img {
+    margin-top: 20px;
+    position: absolute;
+    margin-left: 25%;
+}
+
+form input, form button {
+    margin-bottom: 20px;
+}
+
+form .text {
+    width: 200px;
+}

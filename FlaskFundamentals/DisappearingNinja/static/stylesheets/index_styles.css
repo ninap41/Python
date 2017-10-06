@@ -1,0 +1,48 @@
+h1, button {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+    margin-top: 200px;
+    font-size: 120px;
+}
+
+a{
+    font-family: 'Indie Flower', cursive;
+    position: absolute;
+    top: 320px;
+    left: 800px;
+    text-decoration: none;
+    font-size: 44px;
+    color: #0F550F;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.everything {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/pizza.gif');
+    background-repeat: repeat;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* .gif_container {
+    margin-top: 50px;
+    background-image: url('../img/pizza.gif');
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 200px;
+} */
+
+/* body {
+    background-image: url('../img/pizza.gif');
+    background-repeat: repeat;
+} */
