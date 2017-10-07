@@ -3,7 +3,6 @@ import random
 app = Flask(__name__)
 app.secret_key = 'ThisIsSecret'
 
-@app.route
 
 @app.route('/')
 def index():
@@ -36,12 +35,14 @@ def guessing():
         pass
     return redirect('/')
 
-
-@app.route('/reset')
+@app.route('/reset', methods=['POST'])
 def reset():
-    session['correct_number'] = 0
-    session['hide'] == True
-    return redirect('/')
+    session['ThisIsSecret']  
+    for i in app.secret_key:
+        session.pop(self)
+    return redirect('/', None)
+
+
 
 
 app.run(debug=True)

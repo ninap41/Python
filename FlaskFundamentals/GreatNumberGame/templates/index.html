@@ -13,9 +13,6 @@
                     $(".fade"),fadeIn(3000)
                     $(".append").fadeIn('h2')
                     $(".wrong").fadeOut(300)
-                
-
-           
             });
     </script>
     <title>Random Number Game</title>
@@ -37,9 +34,9 @@
             {% if session['answer_state'] == 'Right' %}
             <p class=".fade" True>The Number was</p>
             <p class=".append" True><h3>{{session['correct_number']}}</h3> <h2>Hooray!</h2>replay?</p>
-            <form class="form" method="get" action=/reset>
+            <form class="form" method="post" action=/reset>
                 
-                <button type="submit">replay</button>
+                <button type="submit" name="reset">replay</button>
             </form>
             {% endif %}
 
@@ -49,7 +46,7 @@
 </div>
         
     
-    <form class="form" method="POST" action=/guess>
+    <form class="form" method="post" action=/guess>
         <input class="text" type="text" name="guess"> <br/>
         <button type="submit">guess</button>
     </form>
