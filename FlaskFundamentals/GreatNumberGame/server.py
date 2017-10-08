@@ -21,7 +21,7 @@ def guessing():
     if int(user_guess) == session['correct_number']:
         session['answer_state'] = 'Right'
         session['user_guess'] = True
-
+        
         print 'you guessed it!'
     elif int(user_guess) > session['correct_number']:
         session['answer_state'] = 'High'

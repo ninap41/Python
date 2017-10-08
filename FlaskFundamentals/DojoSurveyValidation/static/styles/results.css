@@ -1,0 +1,68 @@
+body {
+    background-color: black;
+       font-family: Courier New, Courier, monospace;
+       background-color: black;
+        color: white;
+       background-image: url('codingdojo.jpg') ;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+      
+       
+    }
+    
+    .contain{
+        margin-top: 20px;
+        padding: 10px;
+        margin-left: 200px;
+        width:400px;
+        display: block;
+        color: white
+    }
+    
+    .align{
+        
+        width: 400px;
+        display: block;
+    
+    }
+    legend {
+        font-size: 30px;
+        margin-bottom:-40px;
+    
+    }
+    
+    .legendarydojo {
+        
+        font-size: 50px;
+    }
+    
+    fieldset {
+        margin-bottom: 20px;
+        
+        padding: 50px;
+    }
+    
+    p {
+        color: grey;
+        padding: 2px;
+        display: block;
+        font-style: bold;
+    }
+    
+    input{
+      
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    li {
+        color:red;
+    }
+
+    #narrow {
+        border-radius:5px;
+        margin-left: 100px;
+        height: 40px;
+        width: 100px;
+        background-color: white;
+    }
