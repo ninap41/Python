@@ -8,6 +8,7 @@ app.secret_key = 'ThisIsSecret'
 def index():
     if session.has_key('correct_number') == False:
         session['correct_number'] = random.randrange(1, 100) 
+        
         print session['correct_number']
     else:
         pass
@@ -31,6 +32,8 @@ def guessing():
         session['user_guess'] = int(user_guess)
        
         session['display_tryagain'] = str('You didnt do it')
+    elif int(user_guess) == 0:
+        reset()
     else:
         pass
     return redirect('/')
@@ -38,8 +41,7 @@ def guessing():
 @app.route('/reset', methods=['POST'])
 def reset():
     session['ThisIsSecret']  
-    for i in app.secret_key:
-        session.pop(self)
+    app.config['SEND_FILE_MAX_AGE_DEFAULT']= 0
     return redirect('/', None)
 
 

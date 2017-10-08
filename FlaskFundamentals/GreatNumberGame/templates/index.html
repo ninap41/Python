@@ -33,11 +33,9 @@
 
             {% if session['answer_state'] == 'Right' %}
             <p class=".fade" True>The Number was</p>
-            <p class=".append" True><h3>{{session['correct_number']}}</h3> <h2>Hooray!</h2>replay?</p>
-            <form class="form" method="post" action=/reset>
-                
-                <button type="submit" name="reset">replay</button>
-            </form>
+            <p class=".append" True><h3>{{session['correct_number']}}</h3> <h2>Hooray!</h2></p>
+          
+   
             {% endif %}
 
         <p class="wrong">The Number is.... </p>

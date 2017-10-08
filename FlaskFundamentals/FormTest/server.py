@@ -8,7 +8,6 @@ def index():
 
 @app.route('/success/<name><email>')
 def create_success(name,email):
-    
     return render_template("success.html", username = name, email = email)
 
 @app.route('/users', methods=['POST'])
