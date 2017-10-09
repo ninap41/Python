@@ -7,9 +7,6 @@ class Patient(object):
         self.allergies = allergies
         self.bed_number = None
         
-        
-
-
 class Hospital (object):
     def __init__(self,name,capacity):
          self.patients = []

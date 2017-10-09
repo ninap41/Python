@@ -6,7 +6,8 @@ app.secret_key = 'secretkey'
 @app.route('/')
 def index():
     if session.has_key('count') == False:
-        session['count'] = 0
+        session['count'] += 0
+    session['count'] += 1
     return render_template('index.html', count= session['count'])
 
 @app.route('/increment', methods=['POST'])
