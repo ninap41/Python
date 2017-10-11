@@ -5,7 +5,7 @@ import datetime
 
 app = Flask(__name__)
 # connect and store the connection in "mysql" note that you pass the database name to the function
-mysql = MySQLConnector(app, 'mydb2')   #database
+mysql = MySQLConnector(app, 'lead_gen_business')   #database
 # an example of running a query
 print mysql.query_db("SELECT * FROM friends")
 
