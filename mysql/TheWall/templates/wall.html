@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/wall_styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="{{url_for('static', filename='wall_script.js')}}"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Hello {{ name }}.<br /> Welcome to THE WALL</h1>
+        <form class="logout" action="/logout" method="POST">
+            <input type="hidden" name="logout">
+            <input class="head-btn" type="submit" value="Log Out">
+        </form>
+        <p>Post a message!</p>
+        <form action="/messagepost" method="POST">
+            <textarea name="new_message" cols="80" rows="5"></textarea> <br />
+            <input type="submit" value="Post Message">
+        </form> <br />
+    </div>
+    
+
+
+    {% for message in all_messages %}
+        <div>
+            <h3> {{ message['message'] }} </h3>
+            <p> {{ message['full_name'] }}</p>
+            <p> {{ message['posted_time'] }}</p>
+            {% for comment in all_comments %}
+                {% if comment['message_id'] == message['id'] %}
+                    <hr />
+                    <p> {{ comment['comment'] }}</p>
+                    <p> {{ comment['full_name'] }}</p>
+                    <p> {{ comment['posted_time'] }}</p>
+                {% endif %}
+            {% endfor %}
+            <hr />
+            <p>Post a comment!</p>
+            <form action="/commentpost" method="POST">
+                <input type="hidden" name="hidden_message" value={{ message['id'] }}>
+                <textarea name="new_comment" cols="60" rows="3"></textarea> <br />
+                <input type="submit" value="Post Comment">
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>

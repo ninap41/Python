@@ -1,0 +1,37 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.header form textarea {
+    width: 100%;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.header p {
+    margin-top: 50px;
+}
+
+.logout {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+
+div {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px 10px;
+}
+
+div h3 {
+    font-size: 24px;
+}
