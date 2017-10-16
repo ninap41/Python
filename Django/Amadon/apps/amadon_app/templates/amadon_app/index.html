@@ -26,6 +26,7 @@
                         <form action="/buy/{{ item.id }}" method="POST">
                             {% csrf_token %}
                             <select name='quantity'>
+                                <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -36,10 +37,11 @@
                             <button type="submit">Purchase</button>
                             
                         </form>
-                        <button type="submit" method="POST">clear</button>
+                       
                     </td>
                 </tr>
                 {% endfor %}
+                
 
 </body>
 </html>

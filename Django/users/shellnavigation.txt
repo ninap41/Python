@@ -1,0 +1,444 @@
+Last login: Mon Oct 16 14:40:31 on ttys000
+Ninas-MacBook-Pro:~ Niner$ cd Desktop/DojoAssignments
+Ninas-MacBook-Pro:DojoAssignments Niner$ source flaskEnv/bin/activate    
+(flaskEnv) Ninas-MacBook-Pro:DojoAssignments Niner$ cd Python/Django/users
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 327, in execute
+    self.check()
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/users/urls.py", line 21, in <module>
+    url(r'^', include('apps.users_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/urls.py", line 3, in <module>
+    from . import views
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/views.py", line 5, in <module>
+    from apps.user_login.models import User
+ImportError: No module named user_login.models
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 327, in execute
+    self.check()
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/users/urls.py", line 21, in <module>
+    url(r'^', include('apps.users_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/urls.py", line 3, in <module>
+    from . import views
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/views.py", line 5, in <module>
+    from apps.user_login.models import User
+ImportError: No module named user_login.models
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 327, in execute
+    self.check()
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/users/urls.py", line 21, in <module>
+    url(r'^', include('apps.users_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/urls.py", line 3, in <module>
+    from . import views
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/views.py", line 5, in <module>
+    from apps.users_app.models import User
+ImportError: No module named users_app.models
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 327, in execute
+    self.check()
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/users/urls.py", line 21, in <module>
+    url(r'^', include('apps.users_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/urls.py", line 3, in <module>
+    from . import views
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/views.py", line 5, in <module>
+    from apps.users.models import User
+ImportError: No module named users.models
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 327, in execute
+    self.check()
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/users/urls.py", line 21, in <module>
+    url(r'^', include('apps.users_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/urls.py", line 3, in <module>
+    from . import views
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/views.py", line 5
+    import User
+    ^
+IndentationError: unexpected indent
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 356, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 283, in run_from_argv
+    self.execute(*args, **cmd_options)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 327, in execute
+    self.check()
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/users/urls.py", line 21, in <module>
+    url(r'^', include('apps.users_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/urls.py", line 3, in <module>
+    from . import views
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/users/apps/users_app/views.py", line 5, in <module>
+    import User
+ImportError: No module named User
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py makemigrations
+No changes detected
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py migration
+Unknown command: 'migration'
+Type 'manage.py help' for usage.
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, users_app
+Running migrations:
+  No migrations to apply.
+(flaskEnv) Ninas-MacBook-Pro:users Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import *
+>>> Users.objects.create(first_name="jessica",last_name="rabbit",email="jessica@jessica.com", age=30)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 573, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
+TypeError: 'email' is an invalid keyword argument for this function
+>>> Users.objects.create(first_name="jessica",last_name="rabbit",email_address="jessi
+<Users: Users object>
+>>> users.objects.first().name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'users' is not defined
+>>> Users.objects.first().first_name
+u'jessica'
+>>> Users.objects.create(first_name="debbie",last_name="downer",email_address="debbie@debbie.com", age=70)
+<Users: Users object>
+>>> Users.object.create(first_name="Evan",last_name="Munoz", email_address="evanisagoober@goofygoober.com", age=30)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Users' has no attribute 'object'
+>>> Users.objects.create(first_name="Evan",last_name="Munoz", email_address="evanisagoober@goofygoober.com", age=30)
+<Users: Users object>
+>>> Users.objects.create(first_name="Pokemon",last_name="CatchemAll", email_address="ev
+<Users: Users object>
+>>> Users.objects.create(first_name="Nina",last_name="Palumbo", email_address="ninapalumbo@gmail.com", age=20)
+<Users: Users object>
+>>> 
+>>> 
+>>> User.objects.get(id=3).delete
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'User' is not defined
+>>> Users.objects.get(id=3).delete
+<bound method Users.delete of <Users: Users object>>
+>>> Users.object.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Users' has no attribute 'object'
+>>> Users.object.all
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Users' has no attribute 'object'
+>>> Users.objects.all
+<bound method Manager.all of <django.db.models.manager.Manager object at 0x10be21a50>>
+>>> Users.objects.all()*
+  File "<console>", line 1
+    Users.objects.all()*
+                       ^
+SyntaxError: invalid syntax
+>>> Users.objects.all(*)
+  File "<console>", line 1
+    Users.objects.all(*)
+                       ^
+SyntaxError: invalid syntax
+>>> Users.objects.all()
+<QuerySet [<Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>]>
+>>> Users.objects.get.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'function' object has no attribute 'all'
+>>> Users.objects.get()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 384, in get
+    (self.model._meta.object_name, num)
+MultipleObjectsReturned: get() returned more than one Users -- it returned 12!
+>>> Users.objects.all
+<bound method Manager.all of <django.db.models.manager.Manager object at 0x10be21a50>>
+>>> Users.objects*
+  File "<console>", line 1
+    Users.objects*
+                 ^
+SyntaxError: invalid syntax
+>>> Users.objects.all().values()
+<QuerySet [{'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 1, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 2, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 3, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 4, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 5, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 6, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 7, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'rabbit', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 8, 'email_address': u'jessica@jessica.com', 'age': 30}, {'first_name': u'debbie', 'last_name': u'downer', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 9, 'email_address': u'debbie@debbie.com', 'age': 70}, {'first_name': u'Evan', 'last_name': u'Munoz', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 10, 'email_address': u'evanisagoober@goofygoober.com', 'age': 30}, {'first_name': u'Pokemon', 'last_name': u'CatchemAll', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 11, 'email_address': u'evee@goofygoober.com', 'age': 19}, {'first_name': u'Nina', 'last_name': u'Palumbo', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 12, 'email_address': u'ninapalumbo@gmail.com', 'age': 20}]>
+>>>  Users.objects.all().values(Select * from users)
+  File "<console>", line 1
+    Users.objects.all().values(Select * from users)
+    ^
+IndentationError: unexpected indent
+>>> Users.objects.all().key().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'key'
+>>> Users.objects.all().keys().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'keys'
+>>> Users.objects.all().keys()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'keys'
+>>> Users.objects.all().key()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'key'
+>>> Users.objects.all().field().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'field'
+>>> Users.objects.all().field()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'field'
+>>> users.object.order_by(Blog.objects.order_by("created_at") 
+... Users.objects.order_by("created_at")
+  File "<console>", line 2
+    Users.objects.order_by("created_at")
+        ^
+SyntaxError: invalid syntax
+>>> Users.objects.value().order_by()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'value'
+>>> from Users.models import Post
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: No module named Users.models
+>>> import post
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: No module named post
+>>> 
+KeyboardInterrupt
+>>> Users.objects.order_by("created_at") 
+<QuerySet [<Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>]>
+>>> Blog.objects.order_by("created_at").values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Blog' is not defined
+>>> Blog.objects.order_by("created_at").value()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Blog' is not defined
+>>> Blog.objects.order_by("created_at").format
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Blog' is not defined
+>>> Users.objects.order_by("created_at") 
+<QuerySet [<Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>]>
+>>> Users.objects.order_by("created_at").values
+<bound method QuerySet.values of <QuerySet [<Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>, <Users: Users object>]>>
+>>> Users.objects.order_by("created_at").values()
+<QuerySet [{'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 1, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 2, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 3, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 4, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 5, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 6, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 7, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'rabbit', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 8, 'email_address': u'jessica@jessica.com', 'age': 30}, {'first_name': u'debbie', 'last_name': u'downer', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 9, 'email_address': u'debbie@debbie.com', 'age': 70}, {'first_name': u'Evan', 'last_name': u'Munoz', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 10, 'email_address': u'evanisagoober@goofygoober.com', 'age': 30}, {'first_name': u'Pokemon', 'last_name': u'CatchemAll', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 11, 'email_address': u'evee@goofygoober.com', 'age': 19}, {'first_name': u'Nina', 'last_name': u'Palumbo', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 12, 'email_address': u'ninapalumbo@gmail.com', 'age': 20}]>
+>>> Users.objects.order_by("-created_at").values()
+<QuerySet [{'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 1, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 2, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 3, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 4, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 5, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 6, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'robin', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 7, 'email_address': u'jessica@jessica.com', 'age': 20}, {'first_name': u'jessica', 'last_name': u'rabbit', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 8, 'email_address': u'jessica@jessica.com', 'age': 30}, {'first_name': u'debbie', 'last_name': u'downer', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 9, 'email_address': u'debbie@debbie.com', 'age': 70}, {'first_name': u'Evan', 'last_name': u'Munoz', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 10, 'email_address': u'evanisagoober@goofygoober.com', 'age': 30}, {'first_name': u'Pokemon', 'last_name': u'CatchemAll', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 11, 'email_address': u'evee@goofygoober.com', 'age': 19}, {'first_name': u'Nina', 'last_name': u'Palumbo', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), u'id': 12, 'email_address': u'ninapalumbo@gmail.com', 'age': 20}]>
+>>> 

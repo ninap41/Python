@@ -16,7 +16,7 @@ items = [
     },
     {
         "id": 4,
-        "name": "Book of infinite knowledge",
+        "name": "Book of Infinite Knowledge",
         "price": 1000.00
     }
 ]

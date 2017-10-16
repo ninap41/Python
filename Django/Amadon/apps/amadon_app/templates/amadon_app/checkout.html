@@ -18,6 +18,7 @@
             {% endif %}
             <p>You have ordered {{ request.session.total_items }} item(s) and spent ${{ request.session.total_charged }} with Amadon.com!</p>
         <a href="/">Go back</a>
+        <button type="submit" method="POST"><a href="/clear">clear cart</a></button>
            
     
 </body>

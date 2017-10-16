@@ -22,18 +22,24 @@ def getWord(request):
             newword[key] = value
         if key == "showbig":
             newword['big'] = "big"
-        
+    
     newword['created_at'] = datetime.now().strftime("%H:%M %p, %B %d, %Y")
     
+    try:
+        request.session['words']
+    except KeyError:
+        request.session['words'] = []
     
     log = request.session['words']
     log.append(newword)
     request.session['words'] = log
     for key, val in request.session.__dict__.iteritems():
-        print request.session['words']
+        print key, val
+
 
     return render(request, "wordsession_app/index.html", newword)
 
 def clear(request):
-    request.session.clear()
-    return redirect('/')
+     for key in request.session.keys():
+        del log 
+        return redirect('/')
