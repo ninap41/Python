@@ -1,0 +1,675 @@
+Last login: Mon Oct 16 16:02:13 on ttys000
+Ninas-MacBook-Pro:~ Niner$ cd Desktop/DojoAssignments
+Ninas-MacBook-Pro:DojoAssignments Niner$ source flaskEnv/bin/activate 
+(flaskEnv) Ninas-MacBook-Pro:DojoAssignments Niner$ cd Python/Django
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ ls
+Amadon		TimeDisplay	main		users
+NinjaGold	django-admin	multipleapps	wordsession
+RandomWord	djangoapp	surveyform
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ django-admin startproject ninjas
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ ls
+Amadon		TimeDisplay	main		surveyform
+NinjaGold	django-admin	multipleapps	users
+RandomWord	djangoapp	ninjas		wordsession
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ cd ninjas
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ mkdir apps
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ cd apps
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ touch __init__.py
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ python ../manage.py startapp ninjas_app
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ cd ..
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ ls
+apps		manage.py	ninjas
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py runserver
+Performing system checks...
+
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^$' uses include with a regex ending with a '$'. Remove the dollar from the regex to avoid problems including URLs.
+
+System check identified 1 issue (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+October 16, 2017 - 21:24:59
+Django version 1.11.6, using settings 'ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+python manage.py makemigrations
+^C(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (urls.W001) Your URL pattern '^$' uses include with a regex ending with a '$'. Remove the dollar from the regex to avoid problems including URLs.
+No changes detected
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py makemigrations
+No changes detected
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py makemigrations
+Migrations for 'ninjas_app':
+  apps/ninjas_app/migrations/0001_initial.py
+    - Create model Dojos
+    - Create model Ninjas
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, ninjas_app, sessions
+Running migrations:
+  Applying ninjas_app.0001_initial... OK
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Dojos.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="Ca")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Dojos' is not defined
+>>> Dojos.objects.create(name="CodingDojo Silicon Valley", city="Mountain View", state="Ca")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Dojos' is not defined
+>>> exit()
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py makemigrations
+No changes detected
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, ninjas_app, sessions
+Running migrations:
+  No migrations to apply.
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.ninjas_app.models import *
+>>> Dojos.objects.create(name="CodingDojo in Silicon Valley", city="Mountain View",state="Ca")
+<Dojos: Dojos object>
+>>> Dojos.objects.create(name="CodingDojo in Seattle", city="Seattle",state="WA")
+<Dojos: Dojos object>
+>>> Dojos.objects.create(name="CodingDojo in New York", city="New York",state="NY")
+<Dojos: Dojos object>
+>>> Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=1)
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=1)
+                                                          ^
+SyntaxError: invalid syntax
+>>> Ninjas.objects.create(first_name="Evan",last_name="Munz", dojos=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 392, in create
+    obj = self.model(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/base.py", line 555, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/Library/Python/2.7/site-packages/django/db/models/fields/related_descriptors.py", line 216, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "1": "Ninjas.dojos" must be a "Dojos" instance.
+>>> Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=dojos.objects.get(id=1))
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=dojos.objects.get(id=1))
+                                                          ^
+SyntaxError: invalid syntax
+>>> Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=Dojos.objects.get(id=1))
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=Dojos.objects.get(id=1))
+                                                          ^
+SyntaxError: invalid syntax
+>>> Ninjas.objects.create(first_name="Evan",last_name"Munz", Dojos=dojos.objects.get(id=1))
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Evan",last_name"Munz", Dojos=dojos.objects.get(id=1))
+                                                          ^
+SyntaxError: invalid syntax
+>>> Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=Dojos.objects.get(id=1))
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=Dojos.objects.get(id=1))
+                                                          ^
+SyntaxError: invalid syntax
+>>> exit()
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, ninjas_app, sessions
+Running migrations:
+  No migrations to apply.
+  Your models have changes that are not yet reflected in a migration, and so won't be applied.
+  Run 'manage.py makemigrations' to make new migrations, and then re-run 'manage.py migrate' to apply them.
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py makemigrations
+Did you rename ninjas.Dojos to ninjas.dojos (a ForeignKey)? [y/N]y            ^ Migrations for 'ninjas_app':
+  apps/ninjas_app/migrations/0002_auto_20171016_2155.py
+    - Rename field Dojos on ninjas to dojos
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, ninjas_app, sessions
+Running migrations:
+  Applying ninjas_app.0002_auto_20171016_2155... OK
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.ninjas_app.models import * 
+>>> Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=Dojos.objects.get(id=1))
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Evan",last_name"Munz", dojos=Dojos.objects.get(id=1))
+                                                          ^
+SyntaxError: invalid syntax
+>>> Ninjas.objects.create(first_name="Evan",last_name="Munz", dojos=Dojos.objects.get(id=1))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Nina",last_name"Palumbo", dojos=Dojos.objects.get(id=1))
+  File "<console>", line 1
+    Ninjas.objects.create(first_name="Nina",last_name"Palumbo", dojos=Dojos.objects.get(id=1))
+                                                             ^
+SyntaxError: invalid syntax
+>>> Ninjas.objects.create(first_name="Evan",last_name="Munz", dojos=Dojos.objects.get(id=1))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Nina",last_name="Palumbo", dojos=Dojos.objects.get(id=1))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Tom",last_name="Tom", dojos=Dojos.objects.get(id=2))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Will",last_name="Will", dojos=Dojos.objects.get(id=2))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Will",last_name="andrew", dojos=Dojos.objects.get(id=2))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Kyle",last_name="Beatrice", dojos=Dojos.objects.get(id=3))
+<Ninjas: Ninjas object>
+>>> Ninjas.objects.create(first_name="Corey",last_name="adams", dojos=Dojos.objects.get(id=3))
+<Ninjas: Ninjas object>
+>>> Dojos.objects.get(id=1)
+<Dojos: Dojos object>
+>>> Dojos.objects.get("Ninjas")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 371, in get
+    clone = self.filter(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 1151, in build_filter
+    arg, value = filter_expr
+ValueError: too many values to unpack
+>>> ninja.objects.filter(dojos_id=1).values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'ninja' is not defined
+>>> Ninjas.objects.filter(dojos_id=1).values()
+<QuerySet [{u'dojos_id': 1, 'first_name': u'Evan', 'last_name': u'Munz', u'id': 1}, {u'dojos_id': 1, 'first_name': u'Evan', 'last_name': u'Munz', u'id': 2}, {u'dojos_id': 1, 'first_name': u'Nina', 'last_name': u'Palumbo', u'id': 3}]>
+>>> Dojos.objects.first("Ninjas")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: first() takes exactly 1 argument (2 given)
+>>> Dojos.objects.first().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Dojos' object has no attribute 'values'
+>>> Dojos.objects.first("name")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: first() takes exactly 1 argument (2 given)
+>>> exit()
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojos without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> none
+Invalid input: name 'none' is not defined
+>>> "none"
+Migrations for 'ninjas_app':
+  apps/ninjas_app/migrations/0003_dojos_desc.py
+    - Add field desc to dojos
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.ninjas_app.models import *
+>>> Dojos.objects.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 226, in __repr__
+    data = list(self[:REPR_OUTPUT_SIZE + 1])
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 250, in __iter__
+    self._fetch_all()
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 106, in __iter__
+    for row in compiler.results_iter():
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 836, in results_iter
+    results = self.execute_sql(MULTI)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+OperationalError: no such column: ninjas_app_dojos.desc
+>>> exit()
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, ninjas_app, sessions
+Running migrations:
+  Applying ninjas_app.0003_dojos_desc... OK
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.ninjas_app.models import *
+>>> Dojos.objects.all().values()
+<QuerySet [{'city': u'Mountain View', 'state': u'Ca', 'desc': u'none', u'id': 1, 'name': u'CodingDojo in Silicon Valley'}, {'city': u'Seattle', 'state': u'WA', 'desc': u'none', u'id': 2, 'name': u'CodingDojo in Seattle'}, {'city': u'New York', 'state': u'NY', 'desc': u'none', u'id': 3, 'name': u'CodingDojo in New York'}]>
+>>> exit()
+(flaskEnv) Ninas-MacBook-Pro:ninjas Niner$ cd ..
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    ../SQLConnectErrors/friends.mwb
+	deleted:    ../SQLConnectErrors/mysqlconnection.pyc
+	deleted:    ../SQLConnectErrors/server.py
+	deleted:    ../SQLConnectErrors/sqlconnectionerrors.py
+	deleted:    ../SQLConnectErrors/templates/index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	ninjas/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ git add .
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ git commit -m"added ninjas"
+[master e7433c9] added ninjas
+ 35 files changed, 595 insertions(+)
+ create mode 100644 Django/ninjas/Terminal Saved Output
+ create mode 100644 Django/ninjas/apps/__init__.py
+ create mode 100644 Django/ninjas/apps/__init__.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/__init__.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/__init__.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/admin.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/admin.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/apps.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/0001_initial.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/0001_initial.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/0002_auto_20171016_2155.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/0002_auto_20171016_2155.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/0003_dojos_desc.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/0003_dojos_desc.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/__init__.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/migrations/__init__.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/models.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/models.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/static/ninjas_app/styles/index.css
+ create mode 100644 Django/ninjas/apps/ninjas_app/templates/ninjas_app/index.html
+ create mode 100644 Django/ninjas/apps/ninjas_app/tests.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/urls.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/urls.pyc
+ create mode 100644 Django/ninjas/apps/ninjas_app/views.py
+ create mode 100644 Django/ninjas/apps/ninjas_app/views.pyc
+ create mode 100644 Django/ninjas/db.sqlite3
+ create mode 100755 Django/ninjas/manage.py
+ create mode 100644 Django/ninjas/ninjas/__init__.py
+ create mode 100644 Django/ninjas/ninjas/__init__.pyc
+ create mode 100644 Django/ninjas/ninjas/settings.py
+ create mode 100644 Django/ninjas/ninjas/settings.pyc
+ create mode 100644 Django/ninjas/ninjas/urls.py
+ create mode 100644 Django/ninjas/ninjas/urls.pyc
+ create mode 100644 Django/ninjas/ninjas/wsgi.py
+ create mode 100644 Django/ninjas/ninjas/wsgi.pyc
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ git push
+Counting objects: 38, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (38/38), 18.49 KiB | 3.08 MiB/s, done.
+Total 38 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 2 local objects.
+To https://github.com/ninap41/Python.git
+   c73a73b..e7433c9  master -> master
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ django-admin startproject books
+(flaskEnv) Ninas-MacBook-Pro:Django Niner$ cd books
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ mkdir app
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ cd app
+(flaskEnv) Ninas-MacBook-Pro:app Niner$ ls
+(flaskEnv) Ninas-MacBook-Pro:app Niner$ cd .
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ cd apps
+-bash: cd: apps: No such file or directory
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ touch __init__.py
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ cd ..
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ ls
+apps		books		manage.py
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ cd apps
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ python ../manage.py startapp books_app
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ ls
+__init__.py	books_app
+(flaskEnv) Ninas-MacBook-Pro:apps Niner$ cd ..
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ python manage.py runserver
+Performing system checks...
+
+Unhandled exception in thread started by <function wrapper at 0x1051151b8>
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/utils/autoreload.py", line 228, in wrapper
+    fn(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/books/urls.py", line 21, in <module>
+    url(r'^', include('apps.books_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/apps/books_app/urls.py", line 6, in <module>
+    url(r'^$', views.index),
+AttributeError: 'module' object has no attribute 'index'
+Performing system checks...
+
+Unhandled exception in thread started by <function wrapper at 0x103da41b8>
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/utils/autoreload.py", line 228, in wrapper
+    fn(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/books/urls.py", line 21, in <module>
+    url(r'^', include('apps.books_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/apps/books_app/urls.py", line 6, in <module>
+    url(r'^$', views.index),
+AttributeError: 'module' object has no attribute 'index'
+Performing system checks...
+
+Unhandled exception in thread started by <function wrapper at 0x10e1cf1b8>
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/utils/autoreload.py", line 228, in wrapper
+    fn(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
+    self.check(display_num_errors=True)
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 359, in check
+    include_deployment_checks=include_deployment_checks,
+  File "/Library/Python/2.7/site-packages/django/core/management/base.py", line 346, in _run_checks
+    return checks.run_checks(**kwargs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/registry.py", line 81, in run_checks
+    new_errors = check(app_configs=app_configs)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+  File "/Library/Python/2.7/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 254, in check
+    for pattern in self.url_patterns:
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 405, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Python/2.7/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Library/Python/2.7/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/books/urls.py", line 21, in <module>
+    url(r'^', include('apps.books_app.urls'))
+  File "/Library/Python/2.7/site-packages/django/conf/urls/__init__.py", line 50, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/apps/books_app/urls.py", line 6, in <module>
+    url(r'^$', views.index),
+AttributeError: 'module' object has no attribute 'index'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+October 16, 2017 - 22:29:54
+Django version 1.11.6, using settings 'books.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C(flaskEnv) Ninas-MacBook-Pro:books Niner$ python manage.py makemigrations
+Traceback (most recent call last):
+  File "manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 364, in execute_from_command_line
+    utility.execute()
+  File "/Library/Python/2.7/site-packages/django/core/management/__init__.py", line 338, in execute
+    django.setup()
+  File "/Library/Python/2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Library/Python/2.7/site-packages/django/apps/registry.py", line 108, in populate
+    app_config.import_models()
+  File "/Library/Python/2.7/site-packages/django/apps/config.py", line 202, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/apps/books_app/models.py", line 10, in <module>
+    class books(models.Model):
+  File "/Users/Niner/Desktop/DojoAssignments/Python/Django/books/apps/books_app/models.py", line 15, in books
+    author = models.ForeignKey(author, related_name="books")
+NameError: name 'author' is not defined
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ python manage.py makemigrations
+Migrations for 'books_app':
+  apps/books_app/migrations/0001_initial.py
+    - Create model authors
+    - Create model books
+    - Add field books to authors
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, books_app, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying books_app.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(flaskEnv) Ninas-MacBook-Pro:books Niner$ python manage.py shell
+Python 2.7.10 (default, Jul 30 2016, 18:31:42) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> apps.books_app.model import *
+  File "<console>", line 1
+    apps.books_app.model import *
+                              ^
+SyntaxError: invalid syntax
+>>> apps.books_app.model import *
+  File "<console>", line 1
+    apps.books_app.model import *
+                              ^
+SyntaxError: invalid syntax
+>>> from apps.books_app.models  import *
+>>> books.objects.create(name="C sharp", desc="A Book")
+<books: books object>
+>>> books.objects.create(name="Java", desc="A Book")
+<books: books object>
+>>> books.objects.create(name="Python", desc="A Book")
+<books: books object>
+>>> books.objects.create(name="PHP", desc="A Book")
+<books: books object>
+>>> books.objects.create(name="Ruby", desc="A Book")
+<books: books object>
+>>> authors.objects.create(first_name="Calvin",last_name="Cobbes", email="calvin@calvin.com")
+<authors: authors object>
+>>> authors.objects.create(first_name="mike",last_name="mikey", email="mike@mike.com")
+<authors: authors object>
+>>> authors.objects.create(first_name="jeff",last_name="jeffries", email="jeff@jeff.
+<authors: authors object>
+>>> authors.objects.create(first_name="andrew",last_name="andy", email="mike@andy.com")
+<authors: authors object>
+>>> authors.objects.create(first_name="henry",last_name="henries", email="henry@henry.com")
+<authors: authors object>
+>>> book = books.object.get(id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'books' has no attribute 'object'
+>>> book = books.objects.get(id=1)
+>>> author=authors.objects.get(id=2)
+>>> author.books.add(book)
+>>> author.objects.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 186, in __get__
+    raise AttributeError("Manager isn't accessible via %s instances" % cls.__name__)
+AttributeError: Manager isn't accessible via authors instances
+>>> author.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 186, in __get__
+    raise AttributeError("Manager isn't accessible via %s instances" % cls.__name__)
+AttributeError: Manager isn't accessible via authors instances
+>>> author.books.all()
+<QuerySet [<books: books object>]>
+>>> author.books.all().values()
+<QuerySet [{'updated_at': datetime.date(2017, 10, 16), 'created_at': datetime.date(2017, 10, 16), 'desc': u'A Book', u'id': 1, 'name': u'C sharp'}]>
+>>> this_book=books.objects.get(id=1)
+>>> this_author=authors.objects.get(id=1)
+>>> this_author.books.add(this_book)
+>>> books.objects.first()first_name
+  File "<console>", line 1
+    books.objects.first()first_name
+                                  ^
+SyntaxError: invalid syntax
+>>> books.objects.all().values()
+<QuerySet [{'updated_at': datetime.date(2017, 10, 16), 'created_at': datetime.date(2017, 10, 16), 'desc': u'A Book', u'id': 1, 'name': u'C sharp'}, {'updated_at': datetime.date(2017, 10, 16), 'created_at': datetime.date(2017, 10, 16), 'desc': u'A Book', u'id': 2, 'name': u'Java'}, {'updated_at': datetime.date(2017, 10, 16), 'created_at': datetime.date(2017, 10, 16), 'desc': u'A Book', u'id': 3, 'name': u'Python'}, {'updated_at': datetime.date(2017, 10, 16), 'created_at': datetime.date(2017, 10, 16), 'desc': u'A Book', u'id': 4, 'name': u'PHP'}, {'updated_at': datetime.date(2017, 10, 16), 'created_at': datetime.date(2017, 10, 16), 'desc': u'A Book', u'id': 5, 'name': u'Ruby'}]>
+>>> books_authors.objects.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'books_authors' is not defined
+>>> authors.objects.raw(this_book)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 1267, in __repr__
+    return "<%s: %s>" % (self.__class__.__name__, self.query)
+  File "/Library/Python/2.7/site-packages/django/db/models/sql/query.py", line 97, in __str__
+    return self.sql % self.params_type(self.params)
+TypeError: unsupported operand type(s) for %: 'books' and 'tuple'
+>>> books_books.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'books_books' is not defined
+>>> books.books.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'books' has no attribute 'books'
+>>> this_book=books.objects.get)id=2)
+  File "<console>", line 1
+    this_book=books.objects.get)id=2)
+                               ^
+SyntaxError: invalid syntax
+>>> this_book=books.objects.get(id=2)
+>>> this publish =authors.objects.get(id=2)
+  File "<console>", line 1
+    this publish =authors.objects.get(id=2)
+               ^
+SyntaxError: invalid syntax
+>>> this_publisher =authors.objects.get(id=2)
+>>> this_book = books.object.get(id=3)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'books' has no attribute 'object'
+>>> this_book = books.objects.get(id=3)
+>>> this_book.authors.add(this_publisher)
+>>> this_book =books.objects.get(id=2)
+>>> this_publisher=publisher.objects.get(id=5)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'publisher' is not defined
+>>> this_publisher=authors.objects.get(id=5)
+>>> this_books.authors.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'this_books' is not defined
+>>> this_book.authors.all().values()
+<QuerySet []>
+>>> all_book.authors.all().values()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'all_book' is not defined
+>>> this_book=books.objects.get(id=1)
+>>> this_book.authors.all().values()
+<QuerySet [{'first_name': u'mike', 'last_name': u'mikey', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), 'email': u'mike@mike.com', u'id': 2}, {'first_name': u'Calvin', 'last_name': u'Cobbes', 'created_at': datetime.date(2017, 10, 16), 'updated_at': datetime.date(2017, 10, 16), 'email': u'calvin@calvin.com', u'id': 1}]>
+>>> 
