@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/wordsession_app/styles/index.css" media"screen" title="no title" charset="utf-8">    
+    <title>wordsession</title>
+</head>
+<body>
+
+<div class='Wrapper'>
+
+    <div class='left'>
+        <form action="/getWord" method="post">
+            {% csrf_token %}
+        <label for='word'> <h1>Add A New Word</h1> </label>
+        <input class="ENTERWORD" type="text" name='word'>
+        <BR>
+        <div class="colorlist">
+        <label  for="color">Choose Color:</label>
+            <label class='colorlist'><input type="radio" value="red" name="color">red</label>
+            <label class='colorlist'><input type="radio" value="blue" name="color">blue</label>
+            <label class='colorlist'><input type="radio" value="green" name="color">green</label>
+            </select>
+        </div>
+         
+        <label class='big' for="showbig">I WANNA BIG FONT!
+            <input type="checkbox" name="showbig">
+        </label>
+            <BR>
+            <input type="submit" name="submit" value"Add My Word">
+            <a href="/clear"><button>Clear Session</button></a>
+        </form>
+    </div>
+
+    <div class='right'>
+        <h1>Word Log</h1>
+       <div class="wordcontain">
+        <ul>
+            {% for word in request.session.words %}
+            {% if request.session.words %}
+            <li><span style="color:{{word.color}}" class="{{ word.big }}">{{ word.word }} </span>- added on {{ word.created_at}} </li>
+            
+            
+       
+            {%endif%}
+            {%endfor%}
+        </ul>
+        
+        <div class="wordlist">
+
+        </div>
+    </div>
+</div>
+</div>
+    
+</body>
+</html>

@@ -3,10 +3,5 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
-  
-    
-   
-   
-    # views.show is going to reference function on views
+    url(r'^$', views.index),  # views.show is going to reference function on views
 ]

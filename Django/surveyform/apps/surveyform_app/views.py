@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -8,18 +8,22 @@ def index(request):
     print "yo its working"
     return render(request, "surveyform_app/index.html")
 
-def create(request):
-	if request.method == "POST":
-		print "*"*50
-		print request.POST
-        print request.POST['name']
-        print request.POST['desc']
-        request.session['name'] = "test"  # more on session below
-	return redirect("/results")
-   
+def formprocess(request):
+    if 'counter' in request.session:
+        request.session['counter'] += 1
+    else:
+        request.session['counter'] = 1
 
+    request.session['data'] = {
+        "Name": request.POST['name'],
+        "Dojo Location": request.POST['location'],
+        "Favorite Language": request.POST['language'],
+        "Comments": request.POST['comments']
+    }
+    return redirect('/showresults')
 
+def showresults(request):
+    print "Go to show results!"
+    print request.session
+    return render(request, 'surveyform_app/results.html')
 
-# def process(request):
-#     print "yo its working"
-#     return render(redirect, "results.html")

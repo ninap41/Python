@@ -1,0 +1,93 @@
+body{
+    background-color: rgba(210, 180, 140, 0.205);
+    
+
+}
+
+.Wrapper {
+
+    margin: 0px auto;
+    padding: 0px auto;
+    vertical-align: top;
+    width: 1100px;
+    height: 350px;
+    display: block;
+}
+
+.left{
+    width: 450px;
+    height: 300px;
+    padding-left: 10px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+
+
+
+}
+.big {
+    font-size: 40px;
+
+}
+
+.right {
+    width: 450px;
+    height: 300px;
+    border-left: 2px solid black;
+    padding-left: 10px;
+    vertical-align: top;
+    background-color: white;
+    display: inline-block;
+    overflow: scroll;
+
+}
+.wordcontain{
+    width: 450px;
+    height: 300px;
+    
+    padding-left: 10px;
+    vertical-align: top;
+    background-color: white;
+    display: inline-block;
+    overflow: scroll;
+}
+
+p {
+    background-color: green;
+}
+
+.ENTERWORD {
+    display: block;
+}
+input {
+  
+    padding-top: 5px;
+    margin-top: 10px;
+
+}
+
+label {
+    display: block;
+}
+
+.colorlist {
+    display: block;
+}
+
+.list {
+    display: inline-block;
+}
+
+.biggie{
+    display: inline-block;
+}
+form {
+    display: block;
+    padding-top: 5px;
+
+
+}
+
+ul {
+    overflow: scroll;
+}

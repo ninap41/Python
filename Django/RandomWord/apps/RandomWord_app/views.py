@@ -15,7 +15,8 @@ def randomword(request):
         request.session['counter'] = 1
     word = ''
     my_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't']
-    for times in range (0, 14):
+    
+    for whatever in range (0, 14):
         word = word + str(random.choice(my_letters))
     words = {
         'random_word': word
