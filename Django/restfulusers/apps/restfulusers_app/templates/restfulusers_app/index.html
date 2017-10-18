@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restful Users</title>
+</head>
+<body>
+    <h1>Hey whats up!</h1>
+   
+    <table style="width:100%">
+            <thead>
+              <th>id</th>
+              <th>first name</th>
+              <th>last name</th>
+              <th>email</th>
+              <th>created at</th>
+             
+            </thead>
+            {% for user in users %}
+            <tr>
+                <td>id</td>
+              <td>{{ user.id }}</td>
+              <td>{{ user.firstname }} {{ user.lastname }}</td>
+              <td>{{ user.created_at }}</td>
+              <td><a href="/show/{{ user.id }}">Show</a>
+                <a href="/edit/{{ user.id }}">Edit</a>
+                <a href="/delete/{{ user.id }}">Delete</a></td>
+            </tr>
+            {%endfor%}
+           
+        </table>
+    <button type="submit" method="POST"><a href="/newuser">add user</a></button>
+ 
+    
+</body>
+</html>

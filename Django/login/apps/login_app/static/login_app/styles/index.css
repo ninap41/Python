@@ -1,0 +1,12 @@
+#formform {
+    text-align: center;
+    padding: 20px;
+width: 500px;
+    border: 1px solid black;
+    margin-left: 50px
+}
+
+form input {
+    padding: 10px;
+    margin: 10px;
+}

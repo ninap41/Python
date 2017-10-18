@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destroy</title>
+</head>
+<body>
+
+   
+
+        <table style="width:100%">
+
+                <h1>Are you sure want to delete the following course?</h1>
+                <thead>
+                        <th>Course ID</th>
+                  <th>Course Name</th>
+                  <th>Decscription</th>
+                  <th>Date Added/th>
+                  <th>Actions</th>
+                </thead>
+    
+                <tr>
+                    <td>{{Course.id}}</td>
+                  <td>{{ Course.name }}</td>
+                  <td>{{ Course.description}}</td>
+                  <td>{{ Course.created_at }}</td>
+                
+                </tr>
+                </tr>
+            </table>
+            <button><a href="/goback">No</a></button>
+            <BR>
+            <button><a href="/deletecourse/{{Course.id}}">Remove</button></a>
+    
+</body>
+</html>
